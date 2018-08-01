@@ -35,28 +35,20 @@ function goAdminPageAction(){
 <body>
 <header>
 <div id="header">
-<s:if test="#session.adminLogined==1">
-	<img src="./images/title.jpg" width="130px" height="100px" id="header-title"/>
-</s:if>
-<s:else>
-	<a href='<s:url action="HomeAction"></s:url>'><img src="./images/title.jpg" width="130px" height="100px" id="header-title"/></a>
-</s:else>
+<a href='<s:url action="HomeAction"></s:url>'><img src="./images/sample.jpg" width="130px" height="50px" id="header-title"/></a>
+</div>
+
 
 <div id="header-menu">
+<nav>
 <ul>
-  <s:if test="#session.adminLogined==1">
-  <s:form id="form" name="form">
-        <li><s:submit value="ADMIN" class="submit-btn-admin" onclick="goAdminPageAction();"/></li>
-        <li><s:submit value="LOGOUT" class="submit-btn-logout" onclick="goLogoutAction();"/></li>
-  </s:form>
-  </s:if>
-  <s:else>
+
   <s:form id="form" name="form">
         <li><s:if test='#session.containsKey("mCategoryDtoList")'>
         		<s:select name="categoryId" list="#session.mCategoryDtoList" listValue="categoryName" listKey="categoryId" class="cs-div" id="categoryId"/>
     		</s:if>
     			<s:textfield name="keywords" class="txt-keywords" placeholder="SEARCH"/>
-    			<s:submit value="" class="submit-btn-search" onclick="goSearchItemAction();"/>
+    			<s:submit value="SEARCH" class="submit-btn-search" onclick="goSearchItemAction();"/>
     	</li>
     <s:if test="#session.logined==1">
         <li><s:submit value="LOGOUT" class="submit-btn-logout" onclick="goLogoutAction();"/></li>
@@ -70,11 +62,12 @@ function goAdminPageAction(){
         <li><s:submit value="MYPAGE" class="submit-btn-mypage" onclick="goMyPageAction();"/></li>
     </s:if>
   </s:form>
-  </s:else>
+
 </ul>
+</nav>
 </div>
 
-</div>
+
 </header>
 
 </body>

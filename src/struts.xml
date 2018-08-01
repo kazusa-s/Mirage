@@ -6,16 +6,12 @@
 	<constant name="struts.ui.theme" value="simple" />
 	<!-- 開発者モード(デバッグしたい時にはコメント外してください。ユーザーのエラーページが無効にできます) -->
 	<constant name="struts.devMode" value="true" />
-	<package name="com.internousdev.retris.action" extends="struts-default">
-
-<!-- 内容の変更は基本的にしないでください。
-     変更が必要なときは近藤に声をかけてください。
- -->
+	<package name="com.internousdev.Mirage.action" extends="struts-default">
 
 
 <!-- トップ画面 -->
 
-	<action name="HomeAction" class="com.internousdev.retris.action.HomeAction" method="execute">
+	<action name="HomeAction" class="com.internousdev.Mirage.action.HomeAction" method="execute">
 		<result name="success">home.jsp</result>
 	 </action>
 
@@ -23,7 +19,7 @@
 
 <!-- ユーザー登録機能 -->
 <!--
-	<action name="CreateUserAction" class="com.internousdev.retris.action.CreateUserAction" method="execute">
+	<action name="CreateUserAction" class="com.internousdev.Mirage.action.CreateUserAction" method="execute">
 		<result name="success">createUser.jsp</result>
 		<result name="error">home.jsp</result>
 	 </action>
@@ -32,7 +28,7 @@
 
 
 <!--
-	<action name="CreateUserConfirmAction" class="com.internousdev.retris.action.CreateUserConfirmAction" method="execute">
+	<action name="CreateUserConfirmAction" class="com.internousdev.Mirage.action.CreateUserConfirmAction" method="execute">
 		<result name="success">createUserConfirm.jsp</result>
 		<result name="error">createUser.jsp</result>
 	 </action>
@@ -40,7 +36,7 @@
 
 
 <!--
-	<action name="CreateUserCompleteAction" class="com.internousdev.retris.action.CreateUserCompleteAction" method="execute">
+	<action name="CreateUserCompleteAction" class="com.internousdev.Mirage.action.CreateUserCompleteAction" method="execute">
 		<result name="success">createUserComplete.jsp</result>
 		<result name="error">createUser.jsp</result>
 	 </action>
@@ -51,7 +47,7 @@
 
 <!-- ログイン認証機能 -->
 <!--
-	<action name="GoLoginAction" class="com.internousdev.retris.action.GoLoginAction" method="execute">
+	<action name="GoLoginAction" class="com.internousdev.Mirage.action.GoLoginAction" method="execute">
 		<result name="success">login.jsp</result>
 		<result name="error">home.jsp</result>
 	 </action>
@@ -59,7 +55,7 @@
 
 
 <!--
-	<action name="LoginAction" class="com.internousdev.retris.action.LoginAction" method="execute">
+	<action name="LoginAction" class="com.internousdev.Mirage.action.LoginAction" method="execute">
 		<result name="success">home.jsp</result>
 		<result name="settlement">settlementConfirm.jsp</result>
 		<result name="admin">adminPage.jsp</result>
@@ -73,7 +69,7 @@
 <!-- パスワード再設定機能 -->
 <!--
 
-	<action name="ResetPasswordAction" class="com.internousdev.retris.action.ResetPasswordAction" method="execute">
+	<action name="ResetPasswordAction" class="com.internousdev.Mirage.action.ResetPasswordAction" method="execute">
 		<result name="success">resetPassword.jsp</result>
 		<result name="error">login.jsp</result>
 	 </action>
@@ -82,7 +78,7 @@
 
 
 <!--
-	<action name="ResetPasswordConfirmAction" class="com.internousdev.retris.action.ResetPasswordConfirmAction" method="execute">
+	<action name="ResetPasswordConfirmAction" class="com.internousdev.Mirage.action.ResetPasswordConfirmAction" method="execute">
 		<result name="success">resetPasswordConfirm.jsp</result>
 		<result name="error">resetPassword.jsp</result>
 	 </action>
@@ -91,7 +87,7 @@
 
 
 <!--
-	<action name="ResetPasswordCompleteAction" class="com.internousdev.retris.action.ResetPasswordCompleteAction" method="execute">
+	<action name="ResetPasswordCompleteAction" class="com.internousdev.Mirage.action.ResetPasswordCompleteAction" method="execute">
 		<result name="success">resetPasswordComplete.jsp</result>
 		<result name="error">resetPassword.jsp</result>
 	 </action>
@@ -102,7 +98,7 @@
 
 <!-- 商品一覧/詳細機能 -->
 <!--
-	<action name="ProductListAction" class="com.internousdev.retris.action.ProductListAction" method="execute">
+	<action name="ProductListAction" class="com.internousdev.Mirage.action.ProductListAction" method="execute">
 		<result name="success">productList.jsp</result>
 		<result name="error">home.jsp</result>
 	 </action>
@@ -110,7 +106,7 @@
 
 
 <!--
-	<action name="ProductDetailsAction" class="com.internousdev.retris.action.ProductDetailsAction" method="execute">
+	<action name="ProductDetailsAction" class="com.internousdev.Mirage.action.ProductDetailsAction" method="execute">
 		<result name="success">productDetails.jsp</result>
 		<result name="error">productList.jsp</result>
 	 </action>
@@ -121,7 +117,7 @@
 
 <!-- 商品検索機能 -->
 <!--
-	<action name="SearchProductAction" class="com.internousdev.retris.action.SearchProductAction" method="execute">
+	<action name="SearchProductAction" class="com.internousdev.Mirage.action.SearchProductAction" method="execute">
 		<result name="success">productList.jsp</result>
 		<result name="error">productList.jsp</result>
 	 </action>
@@ -132,7 +128,7 @@
 
 <!-- カート機能 -->
 <!--
-	<action name="AddCartAction" class="com.internousdev.retris.action.AddCartAction" method="execute">
+	<action name="AddCartAction" class="com.internousdev.Mirage.action.AddCartAction" method="execute">
 		<result name="success">cart.jsp</result>
 		<result name="error">home.jsp</result>
 	 </action>
@@ -140,7 +136,7 @@
 
 
 <!--
-	<action name="CartAction" class="com.internousdev.retris.action.CartAction" method="execute">
+	<action name="CartAction" class="com.internousdev.Mirage.action.CartAction" method="execute">
 		<result name="success">cart.jsp</result>
 		<result name="error">home.jsp</result>
 	 </action>
@@ -148,7 +144,7 @@
 
 
 <!--
-	<action name="DeleteCartAction" class="com.internousdev.retris.action.DeleteCartAction" method="execute">
+	<action name="DeleteCartAction" class="com.internousdev.Mirage.action.DeleteCartAction" method="execute">
 		<result name="success">cart.jsp</result>
 		<result name="error">cart.jsp</result>
 	 </action>
@@ -160,7 +156,7 @@
 <!-- 宛先情報選択機能 -->
 <!--
 
-	<action name="SettlementConfirmAction" class="com.internousdev.retris.action.SettlementConfirmAction" method="execute">
+	<action name="SettlementConfirmAction" class="com.internousdev.Mirage.action.SettlementConfirmAction" method="execute">
 		<result name="success">settlementConfirm.jsp</result>
 		<result name="error">login.jsp</result>
 	 </action>
@@ -172,7 +168,7 @@
 
 <!-- 宛先情報登録機能 -->
 <!--
-	<action name="CreateDestinationAction" class="com.internousdev.retris.action.CreateDestinationAction" method="execute">
+	<action name="CreateDestinationAction" class="com.internousdev.Mirage.action.CreateDestinationAction" method="execute">
 		<result name="success">createDestination.jsp</result>
 		<result name="error">home.jsp</result>
 	 </action>
@@ -180,7 +176,7 @@
 
 
 <!--
-	<action name="CreateDestinationConfirmAction" class="com.internousdev.retris.action.CreateDestinationConfirmAction" method="execute">
+	<action name="CreateDestinationConfirmAction" class="com.internousdev.Mirage.action.CreateDestinationConfirmAction" method="execute">
 		<result name="success">createDestinationConfirm.jsp</result>
 		<result name="error">createDestination.jsp</result>
 	 </action>
@@ -188,7 +184,7 @@
 
 
 <!--
-	<action name="CreateDestinationCompleteAction" class="com.internousdev.retris.action.CreateDestinationCompleteAction" method="execute">
+	<action name="CreateDestinationCompleteAction" class="com.internousdev.Mirage.action.CreateDestinationCompleteAction" method="execute">
 		<result name="success">createDestinationComplete.jsp</result>
 		<result name="error">createDestination.jsp</result>
 	 </action>
@@ -199,7 +195,7 @@
 
 <!-- 決済完了機能 -->
 <!--
-	<action name="SettlementCompleteAction" class="com.internousdev.retris.action.SettlementCompleteAction" method="execute">
+	<action name="SettlementCompleteAction" class="com.internousdev.Mirage.action.SettlementCompleteAction" method="execute">
 		<result name="success">settlementComplete.jsp</result>
 		<result name="error">settlementConfirm.jsp</result>
 	 </action>
@@ -210,7 +206,7 @@
 
 <!-- マイページ機能 -->
 <!--
-	<action name="MyPageAction" class="com.internousdev.retris.action.MyPageAction" method="execute">
+	<action name="MyPageAction" class="com.internousdev.Mirage.action.MyPageAction" method="execute">
 		<result name="success">mypage.jsp</result>
 		<result name="error">home.jsp</result>
 	 </action>
@@ -221,14 +217,14 @@
 
 <!-- 商品購入履歴機能 -->
 <!--
-	<action name="PurchaseHistoryAction" class="com.internousdev.retris.action.PurchaseHistoryAction" method="execute">
+	<action name="PurchaseHistoryAction" class="com.internousdev.Mirage.action.PurchaseHistoryAction" method="execute">
 		<result name="success">purchaseHistory.jsp</result>
 	 </action>
  -->
 
 
 <!--
-	<action name="DeletePurchaseHistoryAction" class="com.internousdev.retris.action.DeletePurchaseHistoryAction" method="execute">
+	<action name="DeletePurchaseHistoryAction" class="com.internousdev.Mirage.action.DeletePurchaseHistoryAction" method="execute">
 		<result name="success">purchaseHistory.jsp</result>
 		<result name="error">home.jsp</result>
 	 </action>
@@ -239,7 +235,7 @@
 
 <!-- ログアウト機能 -->
 <!--
-	<action name="LogoutAction" class="com.internousdev.retris.action.LogoutAction" method="execute">
+	<action name="LogoutAction" class="com.internousdev.Mirage.action.LogoutAction" method="execute">
 		<result name="success">index.jsp</result>
 	 </action>
  -->
@@ -249,7 +245,7 @@
 
 <!-- 商品追加機能 -->
 <!--
-	<action name="AddProductAction" class="com.internousdev.retris.action.AddProductAction" method="execute">
+	<action name="AddProductAction" class="com.internousdev.Mirage.action.AddProductAction" method="execute">
 		<result name="success">addProduct.jsp</result>
 		<result name="error">adminPage.jsp</result>
 	 </action>
@@ -257,7 +253,7 @@
 
 
 <!--
-	<action name="AddProductConfirmAction" class="com.internousdev.retris.action.AddProductConfirmAction" method="execute">
+	<action name="AddProductConfirmAction" class="com.internousdev.Mirage.action.AddProductConfirmAction" method="execute">
 		<result name="success">addProductConfirm.jsp</result>
 		<result name="error">addProduct.jsp</result>
 	 </action>
@@ -265,7 +261,7 @@
 
 
 <!--
-	<action name="AddProductCompleteAction" class="com.internousdev.retris.action.AddProductCompleteAction" method="execute">
+	<action name="AddProductCompleteAction" class="com.internousdev.Mirage.action.AddProductCompleteAction" method="execute">
 		<result name="success">addProductComplete.jsp</result>
 		<result name="error">addProduct.jsp</result>
 	 </action>
@@ -276,7 +272,7 @@
 
 <!-- 商品削除機能 -->
 <!--
-	<action name="DeleteProductAction" class="com.internousdev.retris.action.DeleteProductAction" method="execute">
+	<action name="DeleteProductAction" class="com.internousdev.Mirage.action.DeleteProductAction" method="execute">
 		<result name="success">adminPage.jsp</result>
 		<result name="error">adminPage.jsp</result>
 	 </action>
@@ -287,7 +283,7 @@
 
 <!-- 商品更新機能 -->
 <!--
-	<action name="UpdateProductAction" class="com.internousdev.retris.action.UpdateProductAction" method="execute">
+	<action name="UpdateProductAction" class="com.internousdev.Mirage.action.UpdateProductAction" method="execute">
 		<result name="success">updateProduct.jsp</result>
 		<result name="error">adminPage.jsp</result>
 	 </action>
@@ -295,7 +291,7 @@
 
 
 <!--
-	<action name="UpdateProductConfirmAction" class="com.internousdev.retris.action.UpdateProductConfirmAction" method="execute">
+	<action name="UpdateProductConfirmAction" class="com.internousdev.Mirage.action.UpdateProductConfirmAction" method="execute">
 		<result name="success">updateProductConfirm.jsp</result>
 		<result name="error">updateProduct.jsp</result>
 	 </action>
@@ -303,7 +299,7 @@
 
 
 <!--
-	<action name="UpdateProductCompleteAction" class="com.internousdev.retris.action.UpdateProductCompleteAction" method="execute">
+	<action name="UpdateProductCompleteAction" class="com.internousdev.Mirage.action.UpdateProductCompleteAction" method="execute">
 		<result name="success">updateProductComplete.jsp</result>
 		<result name="error">updateProduct.jsp</result>
 	 </action>
@@ -314,7 +310,7 @@
 
 <!-- 管理者機能 -->
 <!--
-	<action name="AdminPageAction" class="com.internousdev.retris.action.AdminPageAction" method="execute">
+	<action name="AdminPageAction" class="com.internousdev.Mirage.action.AdminPageAction" method="execute">
 		<result name="success">adminPage.jsp</result>
 	 </action>
  -->
