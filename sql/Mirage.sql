@@ -48,22 +48,20 @@ foreign key(category_id) references m_category(category_id)
 );
 
 insert into product_info values
-(1,1,"FRAGRANCE","detail",0,2,200,"./images","sample.jpg",now(),0,now(),now()),
+(1,1,"FRAGRANCE","detail",0,2,200,"./images/Fragrance","Fragrance1.jpg",now(),0,now(),now()),
+(2,2,"FRAGRANCE2","detail",0,2,300,"./images/Fragrance","Fragrance2.jpg",now(),0,now(),now()),
+(3,3,"FRAGRANCE3","detail",1,2,400,"./images/Fragrance","Fragrance3.jpg",now(),0,now(),now()),
+(4,4,"FRAGRANCE4","detail",1,2,500,"./images/Fragrance","Fragrance4.jpg",now(),0,now(),now()),
 
+(5,5,"JEWELRY","detail",0,3,200,"./images/JEWELRY","jewery1.jpg",now(),0,now(),now()),
+(6,6,"JEWELRY2","detail",0,3,300,"./images/JEWELRY","jewery2.jpg",now(),0,now(),now()),
+(7,7,"JEWELRY3","detail",1,3,400,"./images/JEWELRY","jewery3.jpg",now(),0,now(),now()),
+(8,8,"JEWELRY4","detail",1,3,250,"./images/JEWELRY","jewery4.jpg",now(),0,now(),now()),
 
-(2,2,"FRAGRANCE2","detail",0,2,300,"./images","sample.jpg",now(),0,now(),now()),
-(3,3,"FRAGRANCE3","detail",1,2,400,"./images","sample.jpg",now(),0,now(),now()),
-(4,4,"FRAGRANCE4","detail",1,2,500,"./images","sample.jpg",now(),0,now(),now()),
-
-(5,5,"JEWELRY","detail",0,3,200,"./images","sample.jpg",now(),0,now(),now()),
-(6,6,"JEWELRY2","detail",0,3,300,"./images","sample.jpg",now(),0,now(),now()),
-(7,7,"JEWELRY3","detail",1,3,400,"./images","sample.jpg",now(),0,now(),now()),
-(8,8,"JEWELRY4","detail",1,3,250,"./images","sample.jpg",now(),0,now(),now()),
-
-(9,9,"ACCESORIES","detail",0,4,200,"./images","sample.jpg",now(),0,now(),now()),
-(10,10,"ACCESORIES2","detail",0,4,300,"./images","sample.jpg",now(),0,now(),now()),
-(11,11,"ACCESORIES3","detail",1,4,400,"./images","sample.jpg",now(),0,now(),now()),
-(12,12,"ACCESORIES4","detail",1,4,500,"./images","sample.jpg",now(),0,now(),now());
+(9,9,"ACCESORIES","detail",0,4,200,"./images/ACCESORIES","accesory1.jpg",now(),0,now(),now()),
+(10,10,"ACCESORIES2","detail",0,4,300,"./images/ACCESORIES","accesory2.jpg",now(),0,now(),now()),
+(11,11,"ACCESORIES3","detail",1,4,400,"./images/ACCESORIES","accesory3.jpg",now(),0,now(),now()),
+(12,12,"ACCESORIES4","detail",1,4,500,"./images/ACCESORIES","accesory4.jpg",now(),0,now(),now());
 
 
 

@@ -32,14 +32,12 @@ public class ProductInfoDAO {
 				productInfoDto.setId(resultSet.getInt("id"));
 				productInfoDto.setProductId(resultSet.getInt("product_id"));
 				productInfoDto.setProductName(resultSet.getString("product_name"));
-				productInfoDto.setProductNameKana(resultSet.getString("product_name_kana"));
 				productInfoDto.setProductDescription(resultSet.getString("product_description"));
 				productInfoDto.setCategoryId(resultSet.getInt("category_id"));
 				productInfoDto.setPrice(resultSet.getInt("price"));
 				productInfoDto.setImageFilePath(resultSet.getString("image_file_path"));
 				productInfoDto.setImageFileName(resultSet.getString("image_file_name"));
 				productInfoDto.setReleaseDate(resultSet.getDate("release_date"));
-				productInfoDto.setReleaseCompany(resultSet.getString("release_company"));
 				productInfoDto.setStatus(resultSet.getInt("status"));
 				productInfoDto.setRegistDate(resultSet.getDate("regist_date"));
 				productInfoDto.setUpdateDate(resultSet.getDate("update_date"));
@@ -57,6 +55,7 @@ public class ProductInfoDAO {
 		}
 
 		return productInfoDtoList;
+
 
 	}
 

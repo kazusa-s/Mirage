@@ -38,6 +38,8 @@ public class ProductListAction extends ActionSupport implements SessionAware {
     	ProductInfoDAO productInfoDao = new ProductInfoDAO();
     	productInfoDtoList = productInfoDao.getProductInfoList();
 
+    	System.out.println(productInfoDtoList);
+
 
     	Pagination pagination = new Pagination();
     	PaginationDTO paginationDTO = pagination.initialize(productInfoDtoList,6);
@@ -49,6 +51,8 @@ public class ProductListAction extends ActionSupport implements SessionAware {
     	session.put("pageNumberList", paginationDTO.getPageNumberList());
 
     	session.put("productInfoDtoList", paginationDTO.getCurrentProductInfoPage());
+
+    	System.out.println(session.get("productInfoDtoList"));
 
     	session.put("hasNextPage", paginationDTO.isNextPage());
     	session.put("hasPreviousPage", paginationDTO.isPreviousPage());
