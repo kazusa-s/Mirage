@@ -75,14 +75,12 @@ public class ProductInfoDAO {
 				productInfoDTO.setId(resultSet.getInt("id"));
 				productInfoDTO.setProductId(resultSet.getInt("product_id"));
 				productInfoDTO.setProductName(resultSet.getString("product_name"));
-				productInfoDTO.setProductNameKana(resultSet.getString("product_name_kana"));
 				productInfoDTO.setProductDescription(resultSet.getString("product_description"));
 				productInfoDTO.setCategoryId(resultSet.getInt("category_id"));
 				productInfoDTO.setPrice(resultSet.getInt("price"));
 				productInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
 				productInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
 				productInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
-				productInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
 				productInfoDTO.setStatus(resultSet.getInt("status"));
 				productInfoDTO.setRegistDate(resultSet.getDate("regist_date"));
 				productInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
@@ -121,14 +119,12 @@ public class ProductInfoDAO {
 				productInfoDTO.setId(resultSet.getInt("id"));
 				productInfoDTO.setProductId(resultSet.getInt("product_id"));
 				productInfoDTO.setProductName(resultSet.getString("product_name"));
-				productInfoDTO.setProductNameKana(resultSet.getString("product_name_kana"));
 				productInfoDTO.setProductDescription(resultSet.getString("product_description"));
 				productInfoDTO.setCategoryId(resultSet.getInt("category_id"));
 				productInfoDTO.setPrice(resultSet.getInt("price"));
 				productInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
 				productInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
 				productInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
-				productInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
 				productInfoDTO.setStatus(resultSet.getInt("status"));
 				productInfoDTO.setRegistDate(resultSet.getDate("regist_date"));
 				productInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
@@ -156,10 +152,10 @@ public class ProductInfoDAO {
 		boolean initializeFlag = true;
 		for(String keyword : keywordsList){
 			if(initializeFlag){
-				sql += " (product_name like '%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
+				sql += " (product_name like '%" + keyword + "%')";
 			    initializeFlag = false;
 			}else{
-				sql += " and (product_name like '%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
+				sql += " and (product_name like '%" + keyword + "%')";
 			}
 		}
 		try {
@@ -170,14 +166,12 @@ public class ProductInfoDAO {
 				productInfoDTO.setId(resultSet.getInt("id"));
 				productInfoDTO.setProductId(resultSet.getInt("product_id"));
 				productInfoDTO.setProductName(resultSet.getString("product_name"));
-				productInfoDTO.setProductNameKana(resultSet.getString("product_name_kana"));
 				productInfoDTO.setProductDescription(resultSet.getString("product_description"));
 				productInfoDTO.setCategoryId(resultSet.getInt("category_id"));
 				productInfoDTO.setPrice(resultSet.getInt("price"));
 				productInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
 				productInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
 				productInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
-				productInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
 				productInfoDTO.setStatus(resultSet.getInt("status"));
 				productInfoDTO.setRegistDate(resultSet.getDate("regist_date"));
 				productInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
@@ -197,7 +191,7 @@ public class ProductInfoDAO {
 
 	//キーワード + カテゴリー検索メソッド
 
-	public List<ProductInfoDTO> getProductInfoListByKeyWords(String[] keywordsList,String categoryId){
+	public List<ProductInfoDTO> getProductInfoListByKeyWords(String[] keywordsList,int categoryId){
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 		List<ProductInfoDTO> productInfoDtoList = new ArrayList<ProductInfoDTO>();
@@ -206,10 +200,10 @@ public class ProductInfoDAO {
 		boolean initializeFlag = true;
 		for (String keyword : keywordsList){
 			if(initializeFlag){
-				sql += " category_id=" + categoryId + " and (product_name like '%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
+				sql += " category_id=" + categoryId + " and (product_name like '%" + keyword + "%')";
 				initializeFlag = false;
 			} else{
-				sql += " and (product_name like '%" + keyword +"%' or product_name_kana like '%" + keyword + "%')";
+				sql += " and (product_name like '%" + keyword +"%')";
 
 			}
 		}
@@ -221,14 +215,12 @@ public class ProductInfoDAO {
 				productInfoDTO.setId(resultSet.getInt("id"));
 				productInfoDTO.setProductId(resultSet.getInt("product_id"));
 				productInfoDTO.setProductName(resultSet.getString("product_name"));
-				productInfoDTO.setProductNameKana(resultSet.getString("product_name_kana"));
 				productInfoDTO.setProductDescription(resultSet.getString("product_description"));
 				productInfoDTO.setCategoryId(resultSet.getInt("category_id"));
 				productInfoDTO.setPrice(resultSet.getInt("price"));
 				productInfoDTO.setImageFilePath(resultSet.getString("image_file_path"));
 				productInfoDTO.setImageFileName(resultSet.getString("image_file_name"));
 				productInfoDTO.setReleaseDate(resultSet.getDate("release_date"));
-				productInfoDTO.setReleaseCompany(resultSet.getString("release_company"));
 				productInfoDTO.setStatus(resultSet.getInt("status"));
 				productInfoDTO.setRegistDate(resultSet.getDate("regist_date"));
 				productInfoDTO.setUpdateDate(resultSet.getDate("update_date"));
@@ -272,27 +264,26 @@ public class ProductInfoDAO {
 	//商品追加メソッド
 
 
-	public int addProduct(String addproductId,String addproductName,String addproductNameKana,String addproductDescription,String addcategoryId,String addprice,String image_file_path,String image_file_name,String addreleaseDate,String addreleaseCompany) throws SQLException{
+	public int addProduct(String addproductId,String addproductName,String addproductDescription,String addcategoryId,String addprice,String image_file_path,String image_file_name,String addreleaseDate,String addreleaseCompany) throws SQLException{
 		final DateUtil dateUtil=new DateUtil();
 		int result = 0;
 
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
-		String sql="INSERT INTO product_info(product_id,product_name,product_name_kana,product_description,category_Id,price,image_file_path,image_file_name,release_date,release_company,regist_date)VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+		String sql="INSERT INTO product_info(product_id,product_name,product_description,category_Id,price,image_file_path,image_file_name,release_date,release_company,regist_date)VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
 		try{
 			PreparedStatement preparedStatement= connection.prepareStatement(sql);
 			preparedStatement.setString(1, addproductId);
 			preparedStatement.setString(2, addproductName);
-			preparedStatement.setString(3, addproductNameKana);
-			preparedStatement.setString(4, addproductDescription);
-			preparedStatement.setString(5, addcategoryId);
-			preparedStatement.setString(6, addprice);
-			preparedStatement.setString(7, image_file_path);
-			preparedStatement.setString(8, image_file_name);
-			preparedStatement.setString(9, addreleaseDate);
-			preparedStatement.setString(10, addreleaseCompany);
-			preparedStatement.setString(11, dateUtil.getDate());
+			preparedStatement.setString(3, addproductDescription);
+			preparedStatement.setString(4, addcategoryId);
+			preparedStatement.setString(5, addprice);
+			preparedStatement.setString(6, image_file_path);
+			preparedStatement.setString(7, image_file_name);
+			preparedStatement.setString(8, addreleaseDate);
+			preparedStatement.setString(9, addreleaseCompany);
+			preparedStatement.setString(10, dateUtil.getDate());
 
 			result=preparedStatement.executeUpdate();
 		}catch(Exception e){
@@ -307,21 +298,20 @@ public class ProductInfoDAO {
 	public int updateProduct(String productName,String productNameKana,String productDescription, String categoryId, String price, String imageFilePath, String imageFileName, String releaseDate, String releaseCompany, int productId){
 			DBConnector dbConnector = new DBConnector();
 			Connection connection = dbConnector.getConnection();
-			String sql = "update product_info set product_name=?, product_name_kana=?,product_description=?,category_id=?,price=?,image_file_path=?,image_file_name=?,release_date=?,release_company=?,update_date=now() where product_id=?";
+			String sql = "update product_info set product_name=?,product_description=?,category_id=?,price=?,image_file_path=?,image_file_name=?,release_date=?,release_company=?,update_date=now() where product_id=?";
 			int result = 0;
 
 			try{
 				PreparedStatement preparedStatement = connection.prepareStatement(sql);
 				preparedStatement.setString(1, productName);
-				preparedStatement.setString(2, productNameKana);
-				preparedStatement.setString(3, productDescription);
-				preparedStatement.setString(4, categoryId);
-				preparedStatement.setString(5, price);
-				preparedStatement.setString(6, imageFilePath);
-				preparedStatement.setString(7, imageFileName);
-				preparedStatement.setString(8, releaseDate);
-				preparedStatement.setString(9, releaseCompany);
-				preparedStatement.setInt(10, productId);
+				preparedStatement.setString(2, productDescription);
+				preparedStatement.setString(3, categoryId);
+				preparedStatement.setString(4, price);
+				preparedStatement.setString(5, imageFilePath);
+				preparedStatement.setString(6, imageFileName);
+				preparedStatement.setString(7, releaseDate);
+				preparedStatement.setString(8, releaseCompany);
+				preparedStatement.setInt(9, productId);
 
 
 				result = preparedStatement.executeUpdate();

@@ -25,6 +25,8 @@ public class ProductListAction extends ActionSupport implements SessionAware {
 	private String imageFileName;
 	private int price;
 
+	private String pageNo;
+
 	private String categoryId;
 	private String keywords;
 	private List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
@@ -42,6 +44,26 @@ public class ProductListAction extends ActionSupport implements SessionAware {
 
 
     	Pagination pagination = new Pagination();
+    	if(pageNo != null){
+
+    	   	PaginationDTO paginationDTO = pagination.getPage(productInfoDtoList, 6, pageNo);
+        	session.put("totalPageSize", paginationDTO.getTotalPageSize());
+        	session.put("currentPageNo", paginationDTO.getCurrentPageNo());
+        	session.put("totalRecordSize", paginationDTO.getTotalRecordSize());
+        	session.put("startRecordNo", paginationDTO.getStartRecordNo());
+        	session.put("endRecordNo", paginationDTO.getEndRecordNo());
+        	session.put("pageNumberList", paginationDTO.getPageNumberList());
+
+        	session.put("productInfoDtoList", paginationDTO.getCurrentProductInfoPage());
+
+        	System.out.println(session.get("productInfoDtoList"));
+
+        	session.put("hasNextPage", paginationDTO.isNextPage());
+        	session.put("hasPreviousPage", paginationDTO.isPreviousPage());
+        	session.put("nextPageNo", paginationDTO.getNextPageNo());
+        	session.put("previousPageNo", paginationDTO.getPreviousPageNo());
+
+    	}else{
     	PaginationDTO paginationDTO = pagination.initialize(productInfoDtoList,6);
     	session.put("totalPageSize", paginationDTO.getTotalPageSize());
     	session.put("currentPageNo", paginationDTO.getCurrentPageNo());
@@ -58,6 +80,7 @@ public class ProductListAction extends ActionSupport implements SessionAware {
     	session.put("hasPreviousPage", paginationDTO.isPreviousPage());
     	session.put("nextPageNo", paginationDTO.getNextPageNo());
     	session.put("previousPageNo", paginationDTO.getPreviousPageNo());
+    	}
 
         if(!session.containsKey("mCategoryList")){
         	MCategoryDAO mCategoryDao = new MCategoryDAO();
@@ -153,6 +176,14 @@ public class ProductListAction extends ActionSupport implements SessionAware {
 	}
 	public void setSession(Map<String,Object> session) {
 	    this.session = session;
+	}
+
+	public String getPageNo(){
+		return pageNo;
+	}
+
+	public void setPageNo(String pageNo){
+		this.pageNo =pageNo;
 	}
 
 
