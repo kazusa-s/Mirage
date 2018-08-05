@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+#box-wide{
+	width : 1000px;
+	height : auto;
+	background-color : rgba(0,0,0,0.7);
+	margin : 0 auto;
+	border-radius : 20px;
+	padding : 10px;
+
+}
+
+
+
+.product-list-box ul li{
+	list-style:none;
+	float:left;
+	margin:45px;
+	text-align:center;
+}
+
+.item-image-box{
+	width : 210px;
+	height : 320px;
+
+}
+
+.pager{
+
+	text-align:center;
+}
+
