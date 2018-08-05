@@ -115,12 +115,11 @@
 
 
 <!-- 商品検索機能 -->
-<!--
 	<action name="SearchProductAction" class="com.internousdev.Mirage.action.SearchProductAction" method="execute">
 		<result name="success">productList.jsp</result>
 		<result name="error">productList.jsp</result>
 	 </action>
- -->
+
 
 
 
